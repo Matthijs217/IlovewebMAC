@@ -6,12 +6,37 @@
     folder1.addEventListener('click', (event) => {
         // Stop de click event van het doorgeven aan de body
         event.stopPropagation();
-        app1.classList.toggle('visible');
+        app1.classList.add('visible');
     });
 
-    body.addEventListener('click', () => {
-        // Verwijder de 'visible' class van de app1 sectie als deze aanwezig is
-        if (app1.classList.contains('visible')) {
-            app1.classList.remove('visible');
-        }
+
+
+    let dragItem = document.querySelector('.app1');
+
+    let offsetX = 0;
+    let offsetY = 0;
+    let mouseX = 0;
+    let mouseY = 0;
+    isMouseDown = false;
+
+    dragItem.addEventListener('mousedown', (event) => {
+        isMouseDown = true;
+        offsetX = dragItem.offsetLeft - event.clientX; 
+        offsetY = dragItem.offsetTop - event.clientY;
     });
+
+    document.addEventListener('mousemove', (event) => {
+        if(!isMouseDown) return;
+        event.preventDefault();
+        mouseX = event.clientX + offsetX;
+        mouseY = event.clientY + offsetY;
+        dragItem.style.left = mouseX + 'px';
+        dragItem.style.top = mouseY + 'px';
+    });
+
+    document.addEventListener('mouseup', (event) => {
+        isMouseDown = false;
+    });
+
+
+
