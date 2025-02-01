@@ -1,7 +1,7 @@
     // Selecteer de folder1 icoon en app1 sectie
     let body = document.querySelector('body');
     let folder1 = document.querySelector('#folder1');
-    let app1 = document.querySelector('.app1'); // Selecteer de app1 sectie
+    let app1 = document.querySelector('.app1');
 
     folder1.addEventListener('click', (event) => {
         // Stop de click event van het doorgeven aan de body
@@ -9,8 +9,23 @@
         app1.classList.add('visible');
     });
 
+    // APP HEADER
+
+    let closeIcon = document.querySelector('.closeicon');
+
+    closeIcon.addEventListener('click', () => {
+        app1.classList.remove('visible');
+        console.log('close');
+    });
 
 
+
+
+
+
+
+
+    // DRAG FUNCTIE
     let dragItem = document.querySelector('.app1');
 
     let offsetX = 0;
@@ -37,6 +52,4 @@
     document.addEventListener('mouseup', (event) => {
         isMouseDown = false;
     });
-
-
 
