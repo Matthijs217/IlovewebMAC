@@ -58,18 +58,6 @@ main p {
     font-family: sans-serif;
 }
 
-@keyframes shake {
-    0% { transform: translateX(0); }
-    25% { transform: translateX(-10px); }
-    50% { transform: translateX(10px); }
-    75% { transform: translateX(-10px); }
-    100% { transform: translateX(0); }
-}
-
-.shake {
-    animation: shake 0.3s ease;
-}
-
 footer {
     position: fixed;
     display: flex;
@@ -107,6 +95,18 @@ footer input {
     padding-left: 15px; /* Voeg deze regel toe om de tekst naar rechts te verplaatsen */
     font-size: 14px;
     opacity: 0.7;
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    50% { transform: translateX(10px); }
+    75% { transform: translateX(-10px); }
+    100% { transform: translateX(0); }
+}
+
+.errormessage {
+    animation: shake 0.3s ease;
 }
 
 footer p {

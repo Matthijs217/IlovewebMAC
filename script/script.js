@@ -1,10 +1,17 @@
-const inputField = document.getElementsByClassName("password-input")[0]; // Selecteer het eerste element met de class "password-input"
-const errorMessage = document.querySelector(".incorrectpassword"); // Selecteer het foutbericht-element
+const inputField = document.getElementsByClassName("password-input")[0];
 
 inputField.addEventListener("keydown", showPassword);
 
-function showPassword(event) { // Event doorgeven als parameter aan de functie
+function showPassword(event) {
     if (event.key === "Enter") {
-        window.location.href = "mainpage.html";
+        if (inputField.value === "Matthijs") {
+            window.location.href = "mainpage.html";
+        } else {
+            inputField.classList.add("errormessage");
+
+            setTimeout(() => {
+                inputField.classList.remove("errormessage");
+            }, 300);
+        }
     }
 }
