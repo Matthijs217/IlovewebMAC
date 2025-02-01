@@ -104,6 +104,11 @@ main section h1 {
     transition: transform 0.3s ease, color 0.3s ease;
     height: 50px;
     width: 50px;
+    &:hover {
+        cursor: pointer;
+        background-color: rgba(214, 214, 214, 0.719);
+        padding: 1em;
+    }
 }
 
 .app1 {
