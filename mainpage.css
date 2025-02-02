@@ -56,21 +56,21 @@ header .openapp {
     margin-left: 10px;
     font-size: 15px;
     font-weight: 700;
-    text-shadow: 0px 0px 2px black; /* Maakt de tekst beter leesbaar */
+    text-shadow: 0px 0px 2px black;
 }
 
 header .date {
     font-size: 15px;
     margin-left: auto; /* Zet .date naar rechts */
-    margin-right: 10px; /* Optionele extra marge rechts */
-    text-shadow: 0px 0px 5px black; /* Maakt de tekst beter leesbaar */
+    margin-right: 10px;
+    text-shadow: 0px 0px 5px black; 
 }
 
 header .time {
     font-size: 15px;
-    margin-left: 1px; /* Kleine afstand tussen .date en .time */
+    margin-left: 1px;
     margin-right: 1em;
-    text-shadow: 0px 0px 5px black; /* Maakt de tekst beter leesbaar */
+    text-shadow: 0px 0px 5px black;
 }
 
 main {
@@ -107,7 +107,7 @@ main section h1 {
     &:hover {
         cursor: pointer;
         background-color: rgba(214, 214, 214, 0.719);
-        padding: 1em;
+        padding: .5em;
     }
 }
 
@@ -154,9 +154,18 @@ main section h1 {
             border-top: 1px solid black;
             border-bottom: 1px solid black;
         }
+        &.expandversion {
+            position: fixed;
+            inset: 0;
+            width: 100vw;
+            height: 100vh;
+            border-radius: 0;
+            z-index: 99;
+        }
     }
 }
 
+/* ELKE APP HEADER / BUTTONS */
 .appheader {
     position: absolute;
     display: flex;
@@ -207,6 +216,7 @@ main section h1 {
         cursor: pointer;
     }
 }
+/*  */
 
 footer {
     display: flex;

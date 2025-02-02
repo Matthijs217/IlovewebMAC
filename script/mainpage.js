@@ -1,7 +1,9 @@
     // Selecteer de folder1 icoon en app1 sectie
-    let body = document.querySelector('body');
     let folder1 = document.querySelector('#folder1');
     let app1 = document.querySelector('.app1');
+    let closeIcon = document.querySelector('.closeicon');
+    let minusIcon = document.querySelector('.minusicon');
+    let expandIcon = document.querySelector('.expandicon');
 
     folder1.addEventListener('click', (event) => {
         // Stop de click event van het doorgeven aan de body
@@ -10,20 +12,20 @@
     });
 
     // APP HEADER
-
-    let closeIcon = document.querySelector('.closeicon');
-
-    closeIcon.addEventListener('click', () => {
+    closeIcon.addEventListener('click', (event) => {
+        event.stopPropagation();
         app1.classList.remove('visible');
-        console.log('close');
     });
 
+    minusIcon.addEventListener('click', (event) => {
+        event.stopPropagation();
+        app1.classList.remove('visible');
+    });
 
-
-
-
-
-
+    expandIcon.addEventListener('click', (event) => {
+        event.stopPropagation();
+        app1.classList.toggle('expandversion');
+    });
 
     // DRAG FUNCTIE
     let dragItem = document.querySelector('.app1');
