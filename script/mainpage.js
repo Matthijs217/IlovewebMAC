@@ -28,7 +28,10 @@
     });
 
     // DRAG FUNCTIE
+    // https://www.youtube.com/watch?v=ymDjvycjgUM
+
     let dragItem = document.querySelector('.app1');
+    let header = document.querySelector('header');
 
     let offsetX = 0;
     let offsetY = 0;
@@ -40,6 +43,7 @@
         isMouseDown = true;
         offsetX = dragItem.offsetLeft - event.clientX; 
         offsetY = dragItem.offsetTop - event.clientY;
+        dragItem.style.cursor = "grabbing";
     });
 
     document.addEventListener('mousemove', (event) => {
@@ -47,11 +51,19 @@
         event.preventDefault();
         mouseX = event.clientX + offsetX;
         mouseY = event.clientY + offsetY;
+
+        const headerBottom = header.getBoundingClientRect().bottom;
+
+        if (mouseY < headerBottom) {
+            mouseY = headerBottom;
+        }
+
         dragItem.style.left = mouseX + 'px';
         dragItem.style.top = mouseY + 'px';
     });
 
     document.addEventListener('mouseup', (event) => {
         isMouseDown = false;
+        dragItem.style.cursor = "grab";
     });
 
